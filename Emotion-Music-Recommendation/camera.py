@@ -2,7 +2,7 @@ import os
 
 import cv2
 import numpy as np
-# from Spotipy import *
+from Spotipy import *
 import pandas as pd
 from PIL import Image
 from tensorflow.keras.layers import Conv2D
