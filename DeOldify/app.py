@@ -117,7 +117,7 @@ if __name__ == '__main__':
 
     image_colorizer = get_image_colorizer(artistic=True)
 
-    port = 5000
+    port = 5001
     host = "0.0.0.0"
 
     app.run(host=host, port=port, threaded=False)

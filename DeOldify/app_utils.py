@@ -23,7 +23,7 @@ def compress_image(image, path_original):
     elif image.size[0] > width:
         wpercent = (width/float(image.size[0]))
         height = int((float(image.size[1])*float(wpercent)))
-        image = image.resize((width,height), PIL.Image.ANTIALIAS)
+        image = image.resize((width,height), Image.ANTIALIAS)
         image.save(first_name,quality=85)
     elif image.size[1] > height:
         wpercent = (height/float(image.size[1]))
