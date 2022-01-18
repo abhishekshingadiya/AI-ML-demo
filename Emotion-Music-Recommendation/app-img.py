@@ -159,7 +159,8 @@ def process_image():
                 cv2.imwrite(output_path, result)
         encoded_img = get_response_image(output_path)
         # callback_img = send_file(output_path, mimetype='image/jpeg')
-        return {'Status': 'Success', 'Songs': df1.to_json(), 'ImageBytes': encoded_img}, 200
+        return {'Status': 'Success', 'Songs': df1.to_json(orient='records')[1:-1].replace('},{', '} {'),
+                'ImageBytes': encoded_img}, 200
 
     except:
         traceback.print_exc()

@@ -1,0 +1,84 @@
+{% extends 'main/header.html' %}
+{% block title %}To be{% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="slide fade-6 kenBurns">
+
+    <div class="content">
+        <div class="container" style=" width: 100%;">
+            <div class="wrap" style="padding:0;">
+                <div class="fix-7-12" style="max-width: 100% !important;">
+                    <p class="margin-top-1 ae-3" style="text-align:left;">
+                            <span class="opacity-8">
+                    Recent Post
+                    <br>
+                    </span>
+                    </p>
+                    <div class="">
+                        <table class="" style="width: 40%; float: left;">
+                            {% if his_prod %}
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <!--                                    <th>input Image</th>-->
+                                <!--                                    <th>output Image</th>-->
+                                <!--                                    <th>Time</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in his_prod reversed %}
+                            <tr>
+                                <td>
+                                    <b><a href="{{i.his_id}}"
+                                          style="text-decoration: none; color: #FFFFFF">
+                                        {{i.name}}</a></b>
+                                </td>
+
+                                <!--                                    <td><img src="{{ student.image_input }}" width="120"/></td>-->
+                                <!--                                    <td><img src="{{ student.image_output }}" width="120"/></td>-->
+                                <!--                                    <td>{{ student.date }}</td>-->
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                            {% endif %}
+
+                        </table>
+                    </div>
+
+
+                </div>
+                <div>
+
+                    <div style="margin-left: 50%; height: 100px;">
+                        <h2>Photo Coloring Using End2end CNN based Model</h2>
+                        <p>A Deep Learning based coloring tool, which can color a black-white or gray picture.</p>
+                        <p>Let there be Color!: Joint End-to-end Learning of Global and Local Image Priors
+                            for Automatic Image Colorization with Simultaneous Classification,
+                            Colouring photos could bring you a lot of fun to your daily life. Just imagine if
+                            you coloured your grandma’s old photo and showed it to your family, how
+                            surprised and happy they would be.:</p>
+
+                        <p>Colouring a picture with Photoshop is a so exhausting process, so we implemented
+                            this Photo coloring tool, which is based on Let there be Color, it's Deep
+                            Learning based on CNN, it can color any grayscale picture with any color scale
+                            and picture resolution.
+                        </p>
+                        <div>
+                            <button style="height:50px;width:200px" type="submit"
+                                    name="button"><a href="/upload" style="color:blue">Upload</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- <div class="background" style="background-image:url(assets/img/background/img-55.jpg)"></div> -->
+    <div class="background" style="background-image:url({% static 'main/assets/img/background/img-55.jpg' %})"></div>
+
+</section>
+{% endblock %}
