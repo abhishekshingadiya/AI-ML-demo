@@ -1,0 +1,122 @@
+{% extends 'main/header.html' %}
+{% block title %}To be{% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="slide fade-6 kenBurns">
+
+    <div class="content">
+        <div class="container" style=" width: 100%;">
+            <div class="wrap" style="padding:0;">
+                <div class="fix-7-12" style="max-width: 100% !important;">
+                    <p class="margin-top-1 ae-3" style="text-align:left;">
+                            <span class="opacity-8">
+                    Recent Post
+                    <br>
+                    </span>
+                    </p>
+                    <div class="">
+                        <table class="" style="width: 40%; float: left;">
+                            {% if num_his_prods %}
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <!--                                    <th>input Image</th>-->
+                                <!--                                    <th>output Image</th>-->
+                                <!--                                    <th>Time</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in num_his_prods reversed %}
+                            <tr>
+                                <td>
+                                    <b><a href="{{i.num_his_id}}"
+                                          style="text-decoration: none; color: #FFFFFF">
+                                        {{i.num_name}}</a></b>
+                                </td>
+
+                                <!--                                    <td><img src="{{ student.image_input }}" width="120"/></td>-->
+                                <!--                                    <td><img src="{{ student.image_output }}" width="120"/></td>-->
+                                <!--                                    <td>{{ student.date }}</td>-->
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                            {% endif %}
+
+                        </table>
+                        <div>
+                            <button style="height:50px;width:200px" type="submit"
+                                    name="button"><a href="/upload_number_plate" style="color:blue">Upload</a></button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="container1">
+                    <h2>Automatic Number Plate Recognition</h2>
+                    <p>This is a four phased Object Detection project mainly focussing on detecting Vehicle's license
+                        plates and thereby reading the license number and saving them in a text file for use by the
+                        concerned authority.This Deep Learning Project uses YOLOv4(You Only Look Once) as its Neural
+                        Network Architecture which is made above a framework called Darknet.It is then made deployment
+                        ready with Tensorflow Lite making it compatible for using it in various edge devices such as
+                        android, iOS, raspberry Pi etc</p>
+                    <p>Automatic License Plate Recognition (ALPR) has been a frequent topic of research due to many
+                        practical applications, such as automatic toll collection, traffic law enforcement, private
+                        spaces access control and road traffic monitoring.<br>
+
+                        ALPR systems typically have three stages: License Plate (LP) detection, character segmentation
+                        and character recognition. The earlier stages require higher accuracy or almost perfection,
+                        since failing to detect the LP would probably lead to a failure in the next stages either. Many
+                        approaches search first for the vehicle and then its LP in order to reduce processing time and
+                        eliminate false positives.<br>
+
+                        Although ALPR has been frequently addressed in the literature, many studies and solutions are
+                        still not robust enough on real-world scenarios. These solutions commonly depend on certain
+                        constraints, such as specific cameras or viewing angles, simple backgrounds, good lighting
+                        conditions, search in a fixed region, and certain types of vehicles (they would not detect LPs
+                        from vehicles such as motorcycles, trucks or buses).<br>
+
+                        Many computer vision tasks have recently achieved a great increase in performance mainly due to
+                        the availability of large-scale annotated datasets (i.e., ImageNet) and the hardware (GPUs)
+                        capable of handling a large amount of data. In this scenario, Deep Learning (DL) techniques
+                        arise. However, despite the remarkable progress of DL approaches in ALPR, there is still a great
+                        demand for ALPR datasets with vehicles and LPs annotations. The amount of training data is
+                        determinant for the performance of DL techniques.<br>
+
+                        In this work, we propose a new robust real-time ALPR system based on the YOLO object detection
+                        Convolutional Neural Networks (CNNs). Since we are processing video frames, we also employ
+                        temporal redundancy such that we process each frame independently and then combine the results
+                        to create a more robust prediction for each vehicle.</p>
+
+                    <p>Technical Aspect
+                        In order to have an efficient object detection (here, the vehicle number plates), I have used
+                        the most recently developed algorithm of YOLO series i.e. YOLOv4 backed up over a framework of
+                        Darknet. <br>
+
+                        Yolov4: Yolo abbreviates to You Only Look Once depicting its ability to detect objects and
+                        entities by using CNN (Convolutional Neural Network).Neural Network in YOLO uses weights trained
+                        by the user through annotated training data by using bounding boxes. Hence YOLO takes an image
+                        as input puts it through a Neural Network and gives the output in the image through bounding
+                        boxes.The input image is divided into SXS grid of cells.Each cell contributes to the object
+                        detection. Each cell predicts Bounding Boxes as well as Class probabilities. The prediction
+                        consists of 5 components (x,y,w,h,confidence).(x,y) represents the centre of the bounding box
+                        and (w,h) are the width and the height of the boxes.Confidence represents the Estimated
+                        Prediction Accuracy of the object.YOLO is extremely fast and accurate as compared to other
+                        algorithms and hence was our primary choice for this project. <br>
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- <div class="background" style="background-image:url(assets/img/background/img-55.jpg)"></div> -->
+    <div class="background" style="background-image:url({% static 'main/assets/img/background/img-55.jpg' %})"></div>
+
+</section>
+{% endblock %}

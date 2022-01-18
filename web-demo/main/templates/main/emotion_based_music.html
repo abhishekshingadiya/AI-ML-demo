@@ -1,0 +1,80 @@
+{% extends 'main/header.html' %}
+{% block title %}To be{% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="slide fade-6 kenBurns">
+
+    <div class="content">
+        <div class="container" style=" width: 100%;">
+            <div class="wrap" style="padding:0;">
+                <div class="fix-7-12" style="max-width: 100% !important;">
+<!--                    <p class="margin-top-1 ae-3" style="text-align:left;">-->
+<!--                            <span class="opacity-8">-->
+<!--                    Recent Post-->
+<!--                    <br>-->
+<!--                    </span>-->
+<!--                    </p>-->
+                    <div class="">
+                        <table class="" style="width: 40%; float: left;">
+                            {% if his_prod %}
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <!--                                    <th>input Image</th>-->
+                                <!--                                    <th>output Image</th>-->
+                                <!--                                    <th>Time</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in his_prod reversed %}
+                            <tr>
+                                <td>
+                                    <b><a href="{{i.his_id}}"
+                                          style="text-decoration: none; color: #FFFFFF">
+                                        {{i.name}}</a></b>
+                                </td>
+
+                                <!--                                    <td><img src="{{ student.image_input }}" width="120"/></td>-->
+                                <!--                                    <td><img src="{{ student.image_output }}" width="120"/></td>-->
+                                <!--                                    <td>{{ student.date }}</td>-->
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                            {% endif %}
+
+                        </table>
+                    </div>
+
+
+                </div>
+                <div id="container1">
+                    <h2>Emotion based Music Recommender System</h2>
+                    <p>A GUI App that recommends songs based on the current mood of the user.</p>
+                    <p>This software recognizes human faces and their corresponding emotions from a video or webcam
+                        feed. Powered by OpenCV and Deep Learning.</p>
+
+                    <p>Song recommendations have existed for a long time, but in majority of the scenarios the
+                        recommendation is determined after learning the user preferences over a period of time, like
+                        looking at his past song preferences, time he listens to the music etc.
+                        In this paper we propose a new approach to song recommendation, where in the mood of a person is
+                        determined from his picture and based on the mood predicted song recommendations are made that
+                        best suit the mood predicted.
+                    </p>
+                </div>
+                <div>
+                    <button style="height:50px;width:200px" type="submit"
+                            name="button"><a href="/upload_image_for_music" style="color:blue">Upload</a></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- <div class="background" style="background-image:url(assets/img/background/img-55.jpg)"></div> -->
+    <div class="background" style="background-image:url({% static 'main/assets/img/background/img-55.jpg' %})"></div>
+
+</section>
+{% endblock %}

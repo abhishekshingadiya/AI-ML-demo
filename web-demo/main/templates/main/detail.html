@@ -1,0 +1,82 @@
+{% extends 'main/header.html' %}
+{% block title %}To be{% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="slide fade-6 kenBurns">
+
+    <div class="content">
+        <div class="container" style=" width: 100%;">
+            <div class="wrap" style="padding:0;">
+                <div class="fix-7-12" style="max-width: 100% !important;">
+                    <p class="margin-top-1 ae-3" style="text-align:left;">
+                            <span class="opacity-8">
+                    Recent Post
+                    <br>
+                    </span>
+                    </p>
+                    <div class="">
+                        <table class="" style="width: 40%; float: left;">
+                            {% if his_prod %}
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <!--                                    <th>input Image</th>-->
+                                <!--                                    <th>output Image</th>-->
+                                <!--                                    <th>Time</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in his_prod reversed %}
+                            <tr>
+                                <td>
+                                    <b><a href="{{i.his_id}}"
+                                          style="text-decoration: none; color: #FFFFFF">
+                                        {{i.name}}</a></b>
+                                </td>
+
+                                <!--                                    <td><img src="{{ student.image_input }}" width="120"/></td>-->
+                                <!--                                    <td><img src="{{ student.image_output }}" width="120"/></td>-->
+                                <!--                                    <td>{{ student.date }}</td>-->
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                            {% endif %}
+
+                        </table>
+                    </div>
+
+
+                </div>
+                {% if product %}
+                <div id="container1">
+
+                    <h4> before </h4>
+                    <img src="{{ product.image_input }}"
+                         alt="{{ product.name }}" width="300" height="300" class="germanshepherd">
+
+                    <h4> After </h4>
+                    <img src="{{ product.image_output }}"
+                         alt="{{ product.name }}" width="300" height="300" class="shibainu">
+
+                </div>
+                {% endif %}
+<!--                <div>-->
+<!--                    <button class="button">-->
+<!--                        <span class="submit">Submit</span>-->
+<!--                        <span class="loading"><i class="fa fa-refresh"></i></span>-->
+<!--                        <span class="check"><i class="fa fa-check"></i></span>-->
+<!--                    </button>-->
+<!--                </div>-->
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- <div class="background" style="background-image:url(assets/img/background/img-55.jpg)"></div> -->
+    <div class="background" style="background-image:url({% static 'main/assets/img/background/img-55.jpg' %})"></div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'main/header.html' %}
+{% block title %}To be{% endblock %}
+
+{% block content %}
+{% load static %}
+<!-- Slide 2 (#55) -->
+<section class="slide fade-6 kenBurns">
+
+    <div class="content">
+        <div class="container">
+            <div class="wrap">
+                <div class="fix-7-12">
+                    <p class="margin-top-1 ae-3">
+                            <span class="opacity-8">
+                    Photo Coloring
+                    <br>
+                    </span>
+                    </p>
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="file-upload">
+                            <button class="file-upload-btn" type="button"
+                                    onclick="$('.file-upload-input').trigger( 'click' )">Add
+                                Image
+                            </button>
+
+                            <div class="image-upload-wrap">
+                                <input id="gphotos" name="myfile" class="file-upload-input" type='file'
+                                       onchange="readURL(this);"
+                                       accept=""/>
+                                <div class="drag-text">
+                                    <h3>Drag and drop a file or select add Image</h3>
+                                </div>
+                            </div>
+                            <div class="file-upload-content">
+                                <img class="file-upload-image" src="#" alt="your image"/>
+                                <div class="image-title-wrap">
+                                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
+                                            class="image-title">Uploaded Image</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="margin-top-3 ae-3">
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-success">Submit </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    {% if uploaded_file %}
+                    <img src="data:image/png;base64, {{ uploaded_file }}" alt="Red dot"/>
+                    {% endif %}
+                    {% if message %}
+                    <h5>{{ message }}</h5>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--        {% if prediction %}-->
+    <!--        <img src="{{img_path}}" height="400px" width="400px">-->
+    <!--        <h2> Your Prediction : <i> {{prediction}} </i></h2>-->
+
+    <!--        {% endif %}-->
+
+    </div>
+    <!-- <div class="background" style="background-image:url(assets/img/background/img-55.jpg)"></div> -->
+    <div class="background" style="background-image:url({% static 'main/assets/img/background/img-55.jpg' %})"></div>
+
+</section>
+{% endblock %}

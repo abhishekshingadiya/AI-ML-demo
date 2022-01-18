@@ -1,0 +1,16 @@
+
+img {
+  max-width: 200px;
+  max-height: 200px;
+  padding: 5px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+@supports (object-fit: cover) {
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
