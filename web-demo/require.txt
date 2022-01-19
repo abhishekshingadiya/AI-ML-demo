@@ -4,7 +4,7 @@ cachetools==4.2.4
 certifi==2021.10.8
 charset-normalizer==2.0.10
 Cython==0.29.16
-Django==2.2.4
+Django==2.2.26
 flatbuffers==2.0
 gast==0.4.0
 google-auth==2.3.3
